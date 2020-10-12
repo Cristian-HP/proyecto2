@@ -1,0 +1,19 @@
+para la combersion de typescript a js
+npm run build 
+
+para correr el servidor 
+npm run dev
+
+para crear la variable de entorno para la base de datos
+
+export LD_LIBRARY_PATH=/opt/instantclient_18_5/
+
+
+para iniciar el docker de oracledb
+docker start a3ca1fcb4cb9
+docker exec -it a3ca1fcb4cb9 bash
+//esto si se reinicion la compu o se apago el servidor
+sh post_install.sh
+luego ctr + p 
+      ctr + q 
+      
