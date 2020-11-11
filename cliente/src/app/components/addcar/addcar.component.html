@@ -42,12 +42,8 @@
                 <div class="col center" style="padding-top: 8px;" *ngFor="let element of COMENTARIOS">
                     <div class="card">
                         <div class="card-body">
-                            <h5 class="card-title">{{element.autor}}: {{element.fecha}}</h5>
-                            <p class="card-text"><span><i class="fas fa-comment"></i></span> {{element.descripcion}}</p>
-                            <div class="form-group" *ngIf="esAutor == true && element.respuesta == null">
-                                <label for="newName">Answer</label>
-                                <input [(ngModel)]="comRespuesta.respuesta" name="titulo" type="text" class="form-control" id="newName">
-                            </div>
+                            <h5 class="card-title text-success">{{element.autor}}  {{element.fecha}}</h5>
+                            <p class="card-text text-warning"><span><i class="fas fa-comment"></i></span> {{element.descripcion}}</p>
                         </div>
                     </div>
                 </div>

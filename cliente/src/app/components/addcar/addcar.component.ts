@@ -52,6 +52,7 @@ export class AddcarComponent implements OnInit {
     } else {
       this.toastr.success('SU Comentario Fue Publicado','EXITO')
       this.comentario.descripcion="";
+      this.getComentarios();
     }
   }
 
