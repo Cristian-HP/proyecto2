@@ -10,6 +10,7 @@ export class HeaderUComponent implements OnInit {
 
   constructor(private router:Router) { }
   USUARIO: any = {};
+  isShown:boolean = false;
   ngOnInit(): void {
     this.USUARIO = JSON.parse(localStorage.getItem('UsuarioL'));
   }

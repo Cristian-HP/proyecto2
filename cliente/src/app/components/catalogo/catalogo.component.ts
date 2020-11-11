@@ -102,4 +102,8 @@ export class CatalogoComponent implements OnInit {
     })
   }
 
+  filtrar(){
+    
+  }
+
 }
