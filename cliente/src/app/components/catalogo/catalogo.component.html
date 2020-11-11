@@ -1,0 +1,50 @@
+<app-header-u></app-header-u>
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-md-3">
+            <h6>Categories</h6>
+            <hr>
+            <div class="list-group" *ngFor="let element of PADRE">
+                <button type="button" (click)="filtroCategoria(element.nombre)" class="list-group-item list-group-item-action">
+                    <span><i class="fas fa-folder"></i> </span>
+                    {{element.nombre}}
+                </button>
+            </div>
+        </div>
+        <div class="col-12 col-md-9">
+            <div class="container">
+                <h1>All Items</h1>
+                <hr>
+            
+                <div class="row" style="padding-bottom: 15px;">
+                    <div class="col-12 col-md-4 text-center">
+                        <input [(ngModel)]="filtro" type="text" class="form-control" id="validationCustom01">
+                        <button class="btn btn-primary" (click)="filtrar()">Search</button>
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <button class="btn btn-outline-info" (click)="porPrecio()">price</button>
+                        <button class="btn btn-outline-warning" (click)="todos()">all</button>
+                    </div>
+                    <div class="col-12 col-md-4 text-center">
+                        <button class="btn btn-info" (click)="ascendente()">asc <i class="fas fa-arrow-up"></i></button>
+                        <button class="btn btn-dark" (click)="descendente()">des <i class="fas fa-arrow-down"></i></button>
+                    </div>
+                </div>
+            
+                <div class="row">
+                    <div class="col-12 col-md-4" *ngFor="let producto of ELEMENT_DATA">
+                        <div class="card center" style="width: 18rem; padding-top: 7px;">
+                            <img src="{{producto.fotoproducto}}" class="card-img-top" alt="...">
+                            <div class="card-body">
+                                <h5 class="card-title">{{producto.nombre}}</h5>
+                                <p class="card-text"><span>Price: Q</span>{{producto.precio}}</p>
+                                <button class="btn btn-info" (click)="seeProduct(producto)">view <i class="fas fa-eye"></i></button>
+                                <button class="btn btn-primary" (click)="seeProduct(producto)">add to car <i class="fas fa-eye"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

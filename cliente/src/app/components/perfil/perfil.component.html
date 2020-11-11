@@ -1,0 +1,74 @@
+<app-header-u></app-header-u>
+<div class="container">
+    <div *ngIf="actualizar == false;" class="card centrar" style="min-width: 20rem; margin-top: 20%;">
+        <div class="row">
+          <div class="col-12 col-md-4">
+            <img src="{{usuario.foto}}" class="card-img" style="padding-top: 35%;" alt="user img">
+          </div>
+          <div class="col-12 col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">{{usuario.nombre}} {{usuario.apellido}}</h5>
+                <hr>
+                <p class="card-text">Pais: {{usuario.pais.nombre}}</p>
+                <p class="card-text">Balance: ${{usuario.credito}}</p>
+                <p class="card-text">Email: {{usuario.correo}}</p>
+                <p class="card-text">Birth: {{usuario.fecha_nacimiento | date:'dd-MM-yyyy'}}</p>
+                <button class="btn btn-primary" (click)="updateUser(true)">Update</button>
+                <button class="btn btn-warning" (click)="deleteUser()">Delete</button>
+            </div>
+          </div>
+        </div>
+    </div>
+    <div *ngIf="actualizar == true;" class="card mb-3 centrar" style="max-width: 540px; margin-top: 10%;">
+        <div class="row">
+          <div class="col-md-8">
+            <div class="card-body">
+                <h5 class="card-title">Update User</h5>
+                <hr>
+                <div class="form-group">
+                    <label for="updateName">Name</label>
+                    <input [(ngModel)]="usuario.nombre" type="text" class="form-control" id="updateName">
+                </div>
+                <div class="form-group">
+                    <label for="updateLast">Last Name</label>
+                    <input [(ngModel)]="usuario.apellido" type="text" class="form-control" id="updateLast">
+                </div>
+                <div class="form-group">
+                    <label for="InputGenre">Country</label>
+                    <select name="pais "  [(ngModel)]="usuario.pais.nombre">
+                        <option *ngFor="let pais of PAISES">{{pais.nombre}}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="InputDate">Birth Date</label>
+                    <input [(ngModel)]="usuario.fecha_nacimiento" type="date" class="form-control" id="InputDate">
+                </div>
+                <div class="form-group">
+                    <label for="updatePassword">New Password</label>
+                    <input [(ngModel)]="NUEVO2.contrasenia1" type="password" class="form-control" id="updatePassword">
+                </div>
+                <div class="form-group">
+                    <label for="updatePassword">Confirm New Password</label>
+                    <input [(ngModel)]="NUEVO2.contrasenia2" type="password" class="form-control" id="updatePassword">
+                </div>
+                <p>Fotografia</p>
+                <div class="form-group">
+                    <form [formGroup]="imageForm" >
+                        <div class="input-file">
+                            <input type="file" 
+                                    placeholder="File"
+                                    (change)="onFileChange($event)"
+                                    formControlName="file">
+                            <img *ngIf="image"  class="img-fluid img-thumbnail image" src="{{image}}">
+                        </div>
+                    </form>
+                </div>
+               
+                <button class="btn btn-danger" (click)="update()">Submit</button>
+                
+                <button class="btn btn-primary mb1 bg-red" (click)="updateUser(false)">Cancel</button>
+            </div>
+          </div>
+        </div>
+    </div>
+</div>

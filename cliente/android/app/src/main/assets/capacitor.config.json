@@ -1,0 +1,13 @@
+{
+  "appId": "com.moldeointeractive.www.app",
+  "appName": "cliente",
+  "bundledWebRuntime": false,
+  "npmClient": "npm",
+  "webDir": "dist/cliente",
+  "plugins": {
+    "SplashScreen": {
+      "launchShowDuration": 0
+    }
+  },
+  "cordova": {}
+}

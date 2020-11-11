@@ -1,0 +1,9 @@
+<form [formGroup]="imageForm" (ngSubmit)="onSubmit" >
+    <div class="input-file">
+        <input type="file" 
+                placeholder="File"
+                (change)="onFileChange()"
+                formControlName="file">
+        <img *ngIf="image"  class="img-fluid img-thumbnail image" src="{{image}}">
+    </div>
+</form>

@@ -10,7 +10,7 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
 };
 const oracledb = require('oracledb');
 const cns = {
-    user: "TEST",
+    user: "PROYECTO2",
     password: "12345",
     connectString: "172.17.0.2/ORCL18"
 };

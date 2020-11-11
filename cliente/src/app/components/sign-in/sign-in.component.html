@@ -1,1 +1,23 @@
-<p>sign-in works!</p>
+<div class="col-md-8 offset-md-3">
+    <div class="card centrar" style="max-width: 30rem; min-width: 20rem;">
+        <img src="../../../assets/logocb.png" class="card-img-top" alt="logo">
+        <div class="card-body">
+            <h5 class="card-title ">Sign In</h5>
+            <form action="">
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Email address</label>
+                    <input [(ngModel)]="USER.correo" name="correo" type="email" class="form-control" id="formCorreo" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Password</label>
+                    <input [(ngModel)]="USER.contrasenia" name="password" type="password" class="form-control" id="formPass">
+                </div>
+                <button  class="btn btn-primary"  (click)="loginuser()" >Login</button>
+            </form>
+        </div>
+        <div class="card-body">
+            <a href="/forget" class="card-link">Forgot your password?</a>
+            <a href="/registro" class="card-link">Create Acoount</a>
+        </div>
+    </div>
+</div>

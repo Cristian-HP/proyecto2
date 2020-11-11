@@ -1,0 +1,48 @@
+<app-header-u></app-header-u>
+<div class="container">
+    <div class="row centrar">
+        <div class="col">
+            <div class="card mb-3" style="max-width: 540px; margin-top: 10%;">
+                <div class="card-body">
+                    <h5 class="card-title">New Product</h5>
+                    <hr><br><br>
+                    <div class="form-group">
+                        <label for="newName">Name Product</label>
+                        <input [(ngModel)]="NEW_PRODUCT.nombre" type="text" class="form-control" id="newName">
+                    </div>
+                    <div class="form-group">
+                        <label for="newPrice">Price</label>
+                        <input [(ngModel)]="NEW_PRODUCT.precio" type="number" class="form-control" id="newPrice">
+                    </div>
+                    <div class="form-group">
+                        <label for="newDescription">Description</label>
+                        <input [(ngModel)]="NEW_PRODUCT.detalle_producto" type="text" class="form-control"
+                            id="newDescription">
+                    </div>
+                    <div class="form-group">
+                        <label for="newQuantity">key words</label>
+                        <input [(ngModel)]="NEW_PRODUCT.palabras" type="text" class="form-control" id="newQuantity">
+                    </div>
+                    <div class="form-group">
+                        <label for="newColor">Category</label>
+                        <input [(ngModel)]="NEW_PRODUCT.categoria" type="text" class="form-control" id="newColor">
+                    </div>
+                    <div class="form-group">
+                        <p>Fotografia</p>
+                        <div class="form-group">
+                            <form [formGroup]="imageForm">
+                                <div class="input-file">
+                                    <input type="file" placeholder="File" (change)="onFileChange($event)"
+                                        formControlName="file">
+                                    <img *ngIf="image" class="img-fluid img-thumbnail image" src="{{image}}">
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" (click)="insertProducto()">Submit</button>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

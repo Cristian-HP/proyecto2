@@ -1,0 +1,15 @@
+<nav class="navbar navbar-expand-lg navbar-dark bg-info fixed-top navbar-header">
+    <a class="navbar-brand" href="/settings"><img src="{{USUARIO.foto}}" alt="producto" style="width: 35px;height: 35px; object-fit: none;border-radius: 50%;"><span> {{USUARIO.nombre}}</span></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" (click)="isShown = !isShown" [attr.aria-expanded]="isShown" aria-label="Toggle navigation" id="navButton">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" [ngClass]="{ 'show': isShown }" id="navbarNavAltMarkup">
+      <div class="navbar-nav">
+        <a class="nav-item nav-link" (click)="isShown = false" routerLink="/catalogo">Catalogo <span class="sr-only">(current)</span></a>
+        <a class="nav-item nav-link" (click)="isShown = false"  routerLink="/newproducto">Add New Products</a>
+        <a class="nav-item nav-link" (click)="isShown = false"  routerLink="/chat">Chat</a>
+        <a class="nav-item nav-link" (click)="isShown = false"  routerLink="/perfil">Perfil</a>
+        <a class="nav-item nav-link" (click)="isShown = false"  routerLink="/home" (click)="logOut()">Log out</a>
+      </div>
+    </div>
+  </nav>
